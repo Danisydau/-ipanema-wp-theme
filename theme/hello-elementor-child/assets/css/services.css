@@ -1,0 +1,8 @@
+.services .wrap{max-width:1200px;margin:0 auto;padding:0 1rem}
+.services .hero{margin:4rem 0 2rem}
+.services .hero h1{margin:0 0 .5rem;line-height:1.1}
+.services .hero .sub{opacity:.85}
+.services .cards{display:grid;gap:1rem;grid-template-columns:repeat(1,minmax(0,1fr))}
+@media (min-width:640px){.services .cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.services .cards{grid-template-columns:repeat(3,1fr)}}
+.services .card{padding:1rem;border:1px solid #eaeaea;border-radius:.5rem;background:#fff}
