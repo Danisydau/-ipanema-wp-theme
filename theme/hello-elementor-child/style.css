@@ -9,53 +9,53 @@ Version: 1.0
 
 /* Desktop Yellow Box Width Adjustment */
 .hero-content .bg-opacity-20 {
-    /* Allow it to size naturally based on content */
-    display: inline-block;
-    max-width: 100%; /* Prevent overflow */
+	/* Allow it to size naturally based on content */
+	display: inline-block;
+	max-width: 100%; /* Prevent overflow */
 }
 
 /* Mobile Adjustments */
 @media (max-width: 767px) {
-    #main-nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #main-nav .site-branding {
-        margin-right: auto;
-    }
-    #menu-toggle {
-        margin-left: auto;
-        margin-right: 0;
-    }
-    .site-header {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	#main-nav .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#main-nav .site-branding {
+		margin-right: auto;
+	}
+	#menu-toggle {
+		margin-left: auto;
+		margin-right: 0;
+	}
+	.site-header {
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .site-header.scrolled {
-    background-color: var(--dark-green) !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+	background-color: var(--dark-green) !important;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
 }
 .site-header.scrolled #menu-toggle {
-    margin-left: auto;
-    margin-right: 0;
+	margin-left: auto;
+	margin-right: 0;
 }
-    /* Add Padding Above Hero Content on Mobile */
-    .hero-content {
-        padding-top: 100px;
-        min-height: calc(100vh - 80px);
-        justify-content: flex-start;
-    }
-    /* Ensure header background on mobile */
-    .site-header {
-        background-color: var(--dark-green);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .site-header.scrolled {
-        background-color: var(--dark-green);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .site-header.scrolled #menu-toggle {
-        margin-left: auto;
-        margin-right: 0;
-    }
+	/* Add Padding Above Hero Content on Mobile */
+	.hero-content {
+		padding-top: 100px;
+		min-height: calc(100vh - 80px);
+		justify-content: flex-start;
+	}
+	/* Ensure header background on mobile */
+	.site-header {
+		background-color: var(--dark-green);
+		box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	}
+	.site-header.scrolled {
+		background-color: var(--dark-green);
+		box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+	}
+	.site-header.scrolled #menu-toggle {
+		margin-left: auto;
+		margin-right: 0;
+	}
 }
