@@ -15,13 +15,8 @@ jobs:
           php-version: '8.2'
           tools: composer
 
-      - name: Install PHPCS + WPCS (allow composer plugin)
-        env:
-          COMPOSER_ALLOW_SUPERUSER: 1
-        run: |
-          composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-          composer global require squizlabs/php_codesniffer wp-coding-standards/wpcs phpcompatibility/php-compatibility
-          ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs,~/.composer/vendor/phpcompatibility/php-compatibility
+      - name: Install dev tools (PHPCS + WPCS)
+        run: composer install --no-interaction --prefer-dist --no-progress
 
-      - name: Run PHPCS on child theme
-        run: ~/.composer/vendor/bin/phpcs --standard=WordPress theme/hello-elementor-child
+      - name: Run PHPCS (WordPress standard)
+        run: composer run lint
