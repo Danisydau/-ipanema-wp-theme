@@ -1,0 +1,30 @@
+name: Lighthouse nightly
+on:
+  schedule:
+    - cron: '0 18 * * *'   # daily 18:00 UTC
+  workflow_dispatch:
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm i -g @lhci/cli
+
+      - name: Lighthouse (desktop)
+        run: |
+          lhci autorun \
+            --collect.url=https://ipanemamedia.com \
+            --collect.url=https://ipanemamedia.com/about/ \
+            --collect.url=https://ipanemamedia.com/contact/ \
+            --collect.settings.preset=desktop \
+            --upload.target=temporary-public-storage
+
+      - name: Lighthouse (mobile)
+        run: |
+          lhci autorun \
+            --collect.url=https://ipanemamedia.com \
+            --collect.url=https://ipanemamedia.com/about/ \
+            --collect.url=https://ipanemamedia.com/contact/ \
+            --collect.settings.preset=mobile \
+            --upload.target=temporary-public-storage
