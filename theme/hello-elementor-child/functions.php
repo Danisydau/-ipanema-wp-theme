@@ -39,3 +39,26 @@ add_action( 'init', 'ipanema_child_register_menus' );
 
 
 // --- Do NOT add a closing
+
+
+/**
+ * Enqueue Services CSS only on the Services Landing template.
+ *
+ * @package ipanema-wp-theme
+ */
+function ipanema_services_assets() {
+	if ( is_page_template( 'template-services.php' ) ) {
+		$base = get_stylesheet_directory();
+		$uri  = get_stylesheet_directory_uri();
+		$css  = $base . '/assets/css/services.css';
+		if ( file_exists( $css ) ) {
+			wp_enqueue_style(
+				'ipanema-services',
+				$uri . '/assets/css/services.css',
+				array(),
+				filemtime( $css )
+			);
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'ipanema_services_assets' );
