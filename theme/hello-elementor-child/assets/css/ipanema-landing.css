@@ -1,0 +1,62 @@
+/* Minimized common styles for brevity, assuming previous version's CSS is needed */
+		:root { --gold: #d4af37; --dark-green: #001c0c; }
+		section#home {
+	min-height: 100vh;
+	width: 100vw; /* This forces it to be 100% of the Viewport Width */
+	position: relative; /* Ensures the next lines work correctly */
+	left: 50%;
+	transform: translateX(-50%);
+}
+		body {margin: 0; font-family: 'DM Sans', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+		/* --- MODIFIED FOR HERO-ONLY VIDEO --- */
+.video-responsive { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+		.video-responsive video { width: 100%; height: 100%; object-fit: cover; }
+		.video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 28, 12, 0.8) 0%, rgba(0, 28, 12, 0.4) 100%); }
+		.hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; }
+		.text-gold { color: var(--gold); } .bg-gold { background-color: var(--gold); } .border-gold { border-color: var(--gold); }
+		.hover-gold:hover { color: var(--gold); } .bg-dark-green { background-color: var(--dark-green); } .text-dark-green { color: var(--dark-green); }
+		.cta-button { transition: all 0.3s ease; } .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
+		.logo-img { height: 40px; width: auto; transition: all 0.3s ease; } .logo-img:hover { transform: scale(1.05); }
+		/* Mobile Menu Styles */
+		.mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background-color: var(--dark-green); z-index: 1050; transition: right 0.4s ease; padding: 2rem; box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); visibility: hidden; opacity: 0; }
+		.mobile-menu.active { right: 0; visibility: visible; opacity: 1; }
+		.menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+		.menu-overlay.active { opacity: 1; pointer-events: all; }
+		/* Section specific styles (work-card, client-logo, stat-number, testimonial-card, footer-link, scroll-indicator) from previous CSS remain necessary */
+		.work-card { transition: all 0.3s ease; overflow: hidden; }
+		.work-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+		.work-card img { transition: transform 0.5s ease; }
+		.work-card:hover img { transform: scale(1.05); }
+		.client-logo { filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease; }
+		.client-logo:hover { filter: grayscale(0%); opacity: 1; }
+		.stat-number { font-size: 3.5rem; font-weight: 700; background: linear-gradient(to right, var(--gold), #f5d062); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent; }
+		.testimonial-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+		.footer-link { position: relative; }
+		.footer-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background-color: var(--gold); transition: width 0.3s ease; }
+		.footer-link:hover::after { width: 100%; }
+		.scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; }
+		.scroll-indicator span { display: block; width: 20px; height: 20px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); transform: rotate(45deg); margin: -10px; animation: animate 2s infinite; }
+		.scroll-indicator span:nth-child(2) { animation-delay: -0.2s; } .scroll-indicator span:nth-child(3) { animation-delay: -0.4s; }
+		@keyframes animate { 0% { opacity: 0; transform: rotate(45deg) translate(-20px, -20px); } 50% { opacity: 1; } 100% { opacity: 0; transform: rotate(45deg) translate(20px, 20px); } }
+		/* Responsive Adjustments */
+		@media (max-width: 768px) { .stat-number { font-size: 2.5rem; } .logo-img { height: 30px; } }
+		/* Prevent body scroll when mobile menu is active */
+		body.mobile-menu-active { overflow: hidden; }
+		/* --- Contact Form Text Color Fix --- */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form input[type="url"],
+.wpcf7-form input[type="number"],
+.wpcf7-form input[type="date"],
+.wpcf7-form textarea {
+	color: var(--dark-green); /* This uses your site's dark green for the text */
+	/* Alternatively, you could use a simple black: color: #000000; */
+}
+
+/* This part is optional: it styles the placeholder text (e.g., "Your Name") to be a visible gray */
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder {
+	color: #666666; /* A medium gray for placeholder text */
+	opacity: 1; /* Ensures placeholder is fully visible */
+}
