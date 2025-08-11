@@ -1,0 +1,3 @@
+This is a placeholder for the jersey base texture.
+Replace this with a layered PNG or PSD with clear UV zones for the chest, back, and sleeves.
+Dimensions should be a power of two (e.g., 2048x2048).

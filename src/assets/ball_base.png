@@ -1,0 +1,3 @@
+This is a placeholder for the ball base texture.
+Replace this with a texture map corresponding to the ball model's UVs.
+Dimensions should be a power of two (e.g., 1024x1024).
